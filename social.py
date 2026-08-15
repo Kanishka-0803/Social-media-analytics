@@ -30,18 +30,6 @@ def get_region_from_state(state_df, state):
 
 end_chars = [ " ", "\n", "#", ".", ",", "?", "!", ":", ";", ")" ]
 def find_hashtags(message):
-    # hashtags = []
-    # for i in range(len(message)):
-    #     hashtag = ""
-    #     if message[i] == "#":
-    #         hashtag += message[i]
-    #         j = i + 1
-    #         while j < len(message) and message[j] not in end_chars:
-    #                 hashtag += message[j]
-    #                 j += 1
-    #         hashtags.append(hashtag)
-    # return hashtags
-
     hashtags = []
     for i in range(len(message)):
         if message[i] == "#":

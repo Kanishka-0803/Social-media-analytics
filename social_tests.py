@@ -13,7 +13,7 @@ def test_parse_label():
 
 def test_get_region_from_state():
     print("Testing get_region_from_state()...", end="")
-    state_df = pd.read_csv("code/data/statemappings.csv")
+    state_df = pd.read_csv("data/statemappings.csv")
     assert(str(get_region_from_state(state_df, "California")) == "West")
     assert(str(get_region_from_state(state_df, "Maine")) == "Northeast")
     assert(str(get_region_from_state(state_df, "Nebraska")) == "Midwest")
@@ -47,8 +47,8 @@ def test_find_sentiment():
 
 def test_add_columns():
     print("Testing add_columns()...", end="")
-    df = pd.read_csv("code/data/politicaldata.csv")
-    state_df = pd.read_csv("code/data/statemappings.csv")
+    df = pd.read_csv("data/politicaldata.csv")
+    state_df = pd.read_csv("data/statemappings.csv")
     add_columns(df, state_df)
     assert(df["name"][1] == "Mitch McConnell")
     assert(df["name"][4] == "Mark Udall")
@@ -151,8 +151,8 @@ def test_all():
     test_find_sentiment()
     test_add_columns()
 
-    df = pd.read_csv("code/data/politicaldata.csv")
-    add_columns(df, pd.read_csv("code/data/statemappings.csv"))
+    df = pd.read_csv("data/politicaldata.csv")
+    add_columns(df, pd.read_csv("data/statemappings.csv"))
 
     test_get_sentiment_quantiles(df)
     test_get_hashtag_subset(df)
@@ -165,8 +165,8 @@ def run():
     print("Now let's look at the general trends!")
     print("\n-----\n")
 
-    df = pd.read_csv("code/data/politicaldata.csv")
-    state_df = pd.read_csv("code/data/statemappings.csv")
+    df = pd.read_csv("data/politicaldata.csv")
+    state_df = pd.read_csv("data/statemappings.csv")
     add_columns(df, state_df)
 
     print("Overall Sentiment Quantiles:")
